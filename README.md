@@ -17,8 +17,12 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
+## Updating the site
+
+The case content is held in four JavaScript lists at the top of the `<script>` block in `index.html`: `FACTS`, `TIMELINE`, `UPDATES` and `SOURCES`. To add an update, add one object to `UPDATES` (newest first) and the page renders it automatically. No HTML edits needed.
+
 ## Structure
 
-- `index.html` — the whole site: case summary, timeline, updates, emergency response, community impact, investigation status, sources.
+- `index.html` — the whole site: sticky nav, case summary, timeline, updates, emergency response, community impact, investigation status, sources, and a stats footer.
 
 This is an independent community page, not an official source. It will be updated if and when official findings are released.
