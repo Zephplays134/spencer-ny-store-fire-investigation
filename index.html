@@ -35,6 +35,9 @@ h2{font-size:1.25rem;margin-bottom:16px;font-family:Verdana,Arial,sans-serif}
 .timeline li::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(255,107,53,.18)}
 .t-when{font-family:Verdana,Arial,sans-serif;font-size:.75rem;color:var(--accent2);letter-spacing:.05em}
 .timeline p{margin-top:2px}
+.update{margin-bottom:16px}
+.update:last-child{margin-bottom:0}
+.u-when{font-family:Verdana,Arial,sans-serif;font-size:.75rem;color:var(--accent2);letter-spacing:.05em;margin-bottom:4px}
 .acc{border:1px solid var(--line);border-radius:8px;background:var(--panel);margin-bottom:10px;overflow:hidden}
 .acc button{all:unset;display:block;width:100%;padding:14px 18px;cursor:pointer;font-family:Verdana,Arial,sans-serif;font-size:.9rem;color:var(--text)}
 .acc button::after{content:"+";float:right;color:var(--accent);font-weight:700}
@@ -84,12 +87,19 @@ footer{padding:26px 0 40px;color:var(--muted);font-family:Verdana,Arial,sans-ser
     <h2>Timeline</h2>
     <ul class="timeline">
       <li><span class="t-when">Fri, Sept 11, 2026 · shortly before 12:30 p.m.</span><p>Units from the Spencer Fire Department respond to a reported structure fire at 15 N. Main St. in the village. Flames are soon visible through the roof.</p></li>
-      <li><span class="t-when">Fri, Sept 11, 2026 · afternoon</span><p>Store employees evacuate the building safely and move vehicles out of the parking lot to give first responders room to operate. Crews from eleven area departments fight the blaze.</p></li>
-      <li><span class="t-when">Fri, Sept 11, 2026 · evening</span><p>Demolition of the building begins hours after the flames are knocked down; by the next morning the Shurfine is rubble.</p></li>
+      <li><span class="t-when">Fri, Sept 11, 2026 · afternoon</span><p>Store employees evacuate the building safely and move vehicles out of the parking lot to give first responders room to operate. Crews from eleven area departments fight the blaze. The remains of the building are demolished the same day.</p></li>
       <li><span class="t-when">Sat, Sept 12, 2026 · morning</span><p>Spencer firefighters return to the scene and spend several hours extinguishing remaining hotspots.</p></li>
       <li><span class="t-when">Mon, Sept 14, 2026</span><p>The site is a pile of rubble. The building is declared a total loss. The origin and cause are under investigation by the Tioga County fire investigation team.</p></li>
       <li><span class="t-when">Ongoing</span><p>No cause has been announced. This page will be updated as findings are made public.</p></li>
     </ul>
+  </section>
+
+  <section id="updates">
+    <h2>Updates</h2>
+    <div class="card update">
+      <div class="u-when">Sat, Oct 10, 2026 — one month on</div>
+      <p>No cause has been announced. The Ithaca Voice reports the rubble still stands on the Main Street lot, with a lingering odor in the air and shopping carts scattered through the wreckage; the remains were demolished on Sept. 11, the day of the fire. The Dollar General in the village remains open, but residents say its limited selection is no substitute for a full grocery: staples like milk and eggs have been selling out frequently, and a local food assistance program that relied on Shurfine for some items has been disrupted.</p>
+    </div>
   </section>
 
   <section id="response">
@@ -103,55 +113,17 @@ footer{padding:26px 0 40px;color:var(--muted);font-family:Verdana,Arial,sans-ser
       <button type="button" onclick="toggleAcc(this)">Other agencies on scene</button>
       <div class="panel"><p>Bangs Ambulance, New York State Electric and Gas (NYSEG), the New York State Department of Transportation, and Austin Excavating.</p></div>
     </div>
-    <div class="acc">
-      <button type="button" onclick="toggleAcc(this)">Where crews came from</button>
-      <div class="panel"><p>Responding agencies came from three counties: Tompkins, Tioga and Chemung. Smoke was visible across the small village as the fire burned.</p></div>
-    </div>
   </section>
 
   <section id="community">
     <h2>Community impact</h2>
-    <p class="card">The Shurfine Food Mart, remembered by many locals as the former Big M, was the village's only full-service grocery store and a local employer. With it gone, the Spencer–Van Etten area is without a grocery store within roughly a 15-mile radius; the nearest full grocery options are in Sayre, Owego, Watkins Glen or Ithaca, about 25 minutes away by car. A Dollar General sits about 685 meters (under half a mile) from the fire site on West Tioga Street, but it is not a traditional supermarket, and residents point out that online grocery ordering is not an option for everyone in the village, particularly older residents without smartphones or delivery accounts. Nearby Candor lost its own grocery store some time ago, so the loss reaches beyond Spencer. In a statement, the village board said it would do everything within its ability to support efforts to ensure a grocery store or similar essential business remains part of the village, and encouraged the community to remain resilient and united.</p>
-  </section>
-
-  <section id="the-store">
-    <h2>The store and its people</h2>
-    <div class="card" style="margin-bottom:14px">
-      <p>The Shurfine operated as a grocery store for decades under a series of names. Many locals still remember it as the former Big M, and the building's roots reach back further still: longtime employee Mike McCray keeps a postcard from the original store, called Possingers, when its phone number was just two digits, 38.</p>
-      <p style="margin-top:10px">By the time of the fire it was the village's only full-service traditional grocery store, a local employer of roughly 20 to 30 people, and, as residents put it, a pillar of the community rather than just a supermarket.</p>
-    </div>
-    <div class="acc">
-      <button type="button" onclick="toggleAcc(this)">Voices from inside the store</button>
-      <div class="panel">
-        <p><strong>Zach Kevan</strong>, a deli employee of about 14 months, was making a sandwich when the fire began. He and another deli worker ran toward the smell of smoke, opened the door to the loading dock, and found black smoke pouring out. The lights were off. He told someone to call 911 and began moving everyone out of the building. Hours later he watched the counter he had worked behind that morning torn down by demolition crews. "Everything is 25 minutes away to go buy a head of lettuce," he said.</p>
-        <p style="margin-top:10px"><strong>Mike McCray</strong> worked at the store for 18 of his 20 years living in Spencer and walked to work. He described the fire's speed: "It went fast. All the timbers in it are years old and all seasoned and dry. It got up into the ceiling and it was gone." He remembered the old store selling groceries and hardware, and even having a shooting range downstairs.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="access">
-    <h2>Food access and what comes next</h2>
-    <div class="card" style="margin-bottom:14px">
-      <p>With the Shurfine gone, the Spencer–Van Etten area has no full-service grocery option. Longtime resident Jeremy Bieder, who uses a flip phone, described the people the change hits hardest: "There's a lot of people that rely on it, that can't go to Ithaca," he said, adding that residents in their 80s may not know how to place a delivery order at all.</p>
-    </div>
-    <div class="acc">
-      <button type="button" onclick="toggleAcc(this)">Help and resources</button>
-      <div class="panel">
-        <p>Local outlets list help for residents affected by the loss: Catholic Charities of Tompkins/Tioga and the Spencer–Van Etten Food Cupboard. The village board has said it will do everything within its ability to support efforts to ensure a grocery store or similar essential business remains part of the village.</p>
-      </div>
-    </div>
-    <div class="acc">
-      <button type="button" onclick="toggleAcc(this)">Nearby school</button>
-      <div class="panel">
-        <p>The burning store sits just blocks from Spencer–Van Etten Middle School. Local outlet WICZ quoted Patterson, whose statement read in part, "Our hearts and thoughts are with the Shurfine staff, first responders and the Village of Spencer." No injuries were reported.</p>
-      </div>
-    </div>
+    <p class="card">The Shurfine Food Mart, remembered by many locals as the former Big M, was the village's only full-service grocery store and a local employer. With it gone, the Spencer–Van Etten area is without a grocery store within roughly a 15-mile radius; the nearest full grocery options are in Sayre, Owego, Watkins Glen or Ithaca. In a statement, the village board said it would do everything within its ability to support efforts to ensure a grocery store or similar essential business remains part of the village, and encouraged the community to remain resilient and united.</p>
   </section>
 
   <section id="investigation">
     <h2>Investigation status</h2>
     <div class="card">
-      <p><strong id="invStatus">Active — cause not determined.</strong> The Tioga County Fire Investigation Team is leading the origin-and-cause investigation. As of the most recent published reports, no cause has been announced and no findings have been released. Law enforcement officials at the scene said in the days after the fire that more information would be released later.</p>
+      <p><strong id="invStatus">Active — cause not determined.</strong> The Tioga County Fire Investigation Team is leading the origin-and-cause investigation. No cause or findings had been announced as of the Oct. 10, 2026 community follow-up.</p>
       <p style="margin-top:10px;color:var(--muted);font-size:.9rem">This is an independent public-information page. It is not affiliated with any fire department, the Tioga County Fire Investigation Team, or the store's ownership. Official findings will be reported by county authorities and local news.</p>
     </div>
   </section>
@@ -163,14 +135,13 @@ footer{padding:26px 0 40px;color:var(--muted);font-family:Verdana,Arial,sans-ser
       <li><a href="https://www.yahoo.com/news/articles/village-spencer-loses-only-grocery-223930675.html" target="_blank" rel="noopener">WETM via Yahoo News — "Village of Spencer loses its only grocery store to fire" (Sept 14, 2026)</a></li>
       <li><a href="https://www.wbng.com/2026/09/14/town-spencer-recovering-after-losing-only-grocery-store-fire/" target="_blank" rel="noopener">WBNG — "Town of Spencer recovering after losing only grocery store in fire" (Sept 14, 2026)</a></li>
       <li><a href="https://ithacavoice.org/2026/09/fire-destroys-only-grocery-store-in-spencer-sending-shockwaves/" target="_blank" rel="noopener">The Ithaca Voice — "Fire destroys only grocery store in Spencer, sending shockwaves" (Sept 12, 2026)</a></li>
-      <li><a href="https://www.wicz.com/news/massive-fire-tears-through-spencer-shurfine-food-mart-near-middle-school/article_71a51b73-f861-4ea5-babc-1c7494c95000.html" target="_blank" rel="noopener">WICZ — "Massive Fire Tears Through Spencer Shurfine Food Mart Near Middle School" (Sept 11, 2026)</a></li>
-      <li><a href="https://www.wbng.com/2026/09/11/shur-fine-food-mart-burns-after-afternoon-fire-spencer/" target="_blank" rel="noopener">WBNG — "Shur Fine Food Mart burns after afternoon fire in Spencer" (Sept 11, 2026)</a></li>
+      <li><a href="https://ithacavoice.org/2026/10/it-truly-felt-like-a-death-after-shurfine-fire-spencer-community-works-to-fill-gaps-left-behind/" target="_blank" rel="noopener">The Ithaca Voice — "'It truly felt like a death': After Shurfine fire, Spencer community works to fill gaps left behind" (Oct 10, 2026)</a></li>
     </ul>
   </section>
 
   <footer>
     <p>Days since the fire: <span id="days">…</span>. Last reviewed: <span id="updated"></span>.</p>
-    <p style="margin-top:6px">Independent community case file · not an official source. Facts drawn from the published reports linked above. Last expanded Oct 28, 2026.</p>
+    <p style="margin-top:6px">Independent community case file · not an official source. Facts drawn from the published reports linked above.</p>
   </footer>
 </main>
 
