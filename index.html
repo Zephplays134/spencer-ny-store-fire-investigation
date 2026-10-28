@@ -14,18 +14,13 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
 body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--text);line-height:1.65}
-.sans{font-family:Verdana,Arial,sans-serif}
 .wrap{max-width:900px;margin:0 auto;padding:0 20px}
-
-/* header */
 header{position:sticky;top:0;z-index:10;background:rgba(14,16,19,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;gap:18px;height:56px}
 .nav .brand{font-family:Verdana,Arial,sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-right:auto}
 .nav a{font-family:Verdana,Arial,sans-serif;font-size:.78rem;color:var(--muted);text-decoration:none}
 .nav a:hover{color:var(--accent2)}
 @media(max-width:640px){.nav a:not(:first-of-type){display:none}}
-
-/* hero */
 .hero{padding:64px 0 40px;border-bottom:1px solid var(--line);background:
   radial-gradient(600px 240px at 20% 0%,rgba(255,107,53,.10),transparent 70%),
   radial-gradient(500px 220px at 85% 10%,rgba(255,179,71,.06),transparent 70%)}
@@ -33,49 +28,35 @@ header{position:sticky;top:0;z-index:10;background:rgba(14,16,19,.92);backdrop-f
 h1{font-size:clamp(1.8rem,5vw,2.7rem);line-height:1.18;margin:12px 0 16px}
 .sub{color:var(--muted);max-width:660px}
 .badge{display:inline-block;font-family:Verdana,Arial,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-top:20px;background:rgba(250,204,21,.10);color:var(--warn);border:1px solid rgba(250,204,21,.4)}
-
-/* sections */
 section{padding:38px 0;border-bottom:1px solid var(--line)}
 section:last-of-type{border-bottom:none}
 h2{font-size:1.3rem;margin-bottom:18px;font-family:Verdana,Arial,sans-serif}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
-
-/* facts grid */
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
 .fact{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
 .fact .k{font-family:Verdana,Arial,sans-serif;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 .fact .v{font-size:1rem}
-
-/* timeline */
 .timeline{list-style:none}
 .timeline li{position:relative;padding:0 0 24px 28px;border-left:2px solid var(--line);margin-left:8px}
 .timeline li:last-child{padding-bottom:2px}
 .timeline li::before{content:"";position:absolute;left:-8px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(255,107,53,.16)}
 .t-when{font-family:Verdana,Arial,sans-serif;font-size:.75rem;color:var(--accent2);letter-spacing:.05em}
 .timeline p{margin-top:3px}
-
-/* updates */
 .update{border-left:3px solid var(--accent);background:var(--panel2);padding:14px 18px;border-radius:0 10px 10px 0;margin-bottom:14px}
 .update:last-child{margin-bottom:0}
 .u-when{font-family:Verdana,Arial,sans-serif;font-size:.74rem;color:var(--accent2);letter-spacing:.05em;margin-bottom:4px}
-
-/* accordions */
 .acc{border:1px solid var(--line);border-radius:10px;background:var(--panel);margin-bottom:10px;overflow:hidden}
 .acc button{all:unset;display:block;width:100%;padding:15px 20px;cursor:pointer;font-family:Verdana,Arial,sans-serif;font-size:.9rem;color:var(--text)}
 .acc button::after{content:"+";float:right;color:var(--accent);font-weight:700}
 .acc button.open::after{content:"\2013"}
 .acc .panel{display:none;padding:0 20px 18px;color:var(--muted);font-size:.95rem}
 .acc .panel.show{display:block}
-
-/* note + sources */
 .note{border-left:3px solid var(--warn);background:rgba(250,204,21,.06);padding:14px 18px;border-radius:0 10px 10px 0;font-size:.95rem}
 .srcs{font-family:Verdana,Arial,sans-serif;font-size:.85rem;list-style:none}
 .srcs li{margin-bottom:10px;padding-left:18px;position:relative}
 .srcs li::before{content:"›";position:absolute;left:0;color:var(--accent);font-weight:700}
 .srcs a{color:var(--accent2);text-decoration:none;border-bottom:1px dotted var(--accent2)}
 .srcs a:hover{color:var(--accent)}
-
-/* footer */
 footer{padding:28px 0 44px;color:var(--muted);font-family:Verdana,Arial,sans-serif;font-size:.78rem}
 .statline{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:12px}
 .stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 16px}
@@ -90,6 +71,7 @@ footer{padding:28px 0 44px;color:var(--muted);font-family:Verdana,Arial,sans-ser
     <a href="#facts">Summary</a>
     <a href="#timeline">Timeline</a>
     <a href="#updates">Updates</a>
+    <a href="#faq">FAQ</a>
     <a href="#investigation">Status</a>
     <a href="#sources">Sources</a>
   </div>
@@ -116,6 +98,11 @@ footer{padding:28px 0 44px;color:var(--muted);font-family:Verdana,Arial,sans-ser
   <section id="updates">
     <h2>Updates</h2>
     <div id="updatesList"></div>
+  </section>
+
+  <section id="faq">
+    <h2>Questions</h2>
+    <div id="faqList"></div>
   </section>
 
   <section id="response">
@@ -184,9 +171,16 @@ const TIMELINE = [
   {when:'Ongoing', text:'No cause has been announced. This page will be updated as findings are made public.'}
 ];
 
-/* To add an update: add one object here, newest first. */
 const UPDATES = [
   {when:'Sat, Oct 10, 2026 — one month on', text:'No cause has been announced. The Ithaca Voice reports the rubble still stands on the Main Street lot, with a lingering odor in the air and shopping carts scattered through the wreckage; the remains were demolished on Sept. 11, the day of the fire. The Dollar General in the village remains open, but residents say its limited selection is no substitute for a full grocery: staples like milk and eggs have been selling out frequently, and a local food assistance program that relied on Shurfine for some items has been disrupted.'}
+];
+
+/* Questions the public is asking. The answer must reflect what published reports actually say. */
+const FAQ = [
+  {q:'Did the fire alarm system go off?', a:'No public answer exists yet. None of the published reports on the fire say whether the store\u2019s fire alarm system, or any sprinkler system, activated before or during the blaze. Whether the alarm sounded is one of the details an origin-and-cause review would cover, and it is part of what the Tioga County Fire Investigation Team\u2019s investigation would establish. Until the team or the store\u2019s ownership speaks to it publicly, this page will not state either answer.'},
+  {q:'Has a cause been announced?', a:'No. The cause remains under investigation by the Tioga County Fire Investigation Team, and no findings had been announced as of the Oct. 10, 2026 follow-up coverage.'},
+  {q:'Was anyone hurt?', a:'No injuries were reported. Store employees evacuated the building safely and moved vehicles out of the parking lot so first responders had room to operate.'},
+  {q:'When will findings be released?', a:'No timeline has been published. This page will be updated if and when official findings are made public.'}
 ];
 
 const SOURCES = [
@@ -206,6 +200,9 @@ document.getElementById('timelineList').innerHTML = TIMELINE.map(t =>
 
 document.getElementById('updatesList').innerHTML = UPDATES.map(u =>
   `<div class="update"><div class="u-when">${u.when}</div><p>${u.text}</p></div>`).join('');
+
+document.getElementById('faqList').innerHTML = FAQ.map(f =>
+  `<div class="acc"><button type="button" onclick="toggleAcc(this)">${f.q}</button><div class="panel"><p>${f.a}</p></div></div>`).join('');
 
 document.getElementById('sourceList').innerHTML = SOURCES.map(s =>
   `<li><a href="${s.url}" target="_blank" rel="noopener">${s.name}</a></li>`).join('');
