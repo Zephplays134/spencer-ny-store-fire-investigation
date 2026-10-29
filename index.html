@@ -1,226 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <title>Spencer NY Store Fire Investigation — Shurfine Food Mart, Sept 11, 2026</title>
-<meta name="description" content="An open case-file website tracking the investigation into the fire that destroyed the Shurfine Food Mart at 15 N. Main St., Spencer, New York, on September 11, 2026.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+<meta name='description' content='An open case-file website tracking the investigation into the fire that destroyed the Shurfine Food Mart at 15 N. Main St., Spencer, New York, on September 11, 2026.'>
+<link rel='icon' href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%27.9em%27 font-size=%2790%27>🔥</text></svg>'>
 <style>
-:root{
-  --bg:#0e1013; --panel:#171b21; --panel2:#1e242c; --line:#2a313b;
-  --text:#ecebe8; --muted:#9aa3ad; --accent:#ff6b35; --accent2:#ffb347; --warn:#facc15;
-}
+:root{--bg:#0b0d10;--panel:#141821;--panel2:#1a1f2a;--line:#262d3a;--text:#f0ede8;--muted:#9aa3b0;--accent:#ff6b35;--amber:#ffb347;--warn:#facc15}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:64px}
-body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--text);line-height:1.65}
-.wrap{max-width:900px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:10;background:rgba(14,16,19,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:18px;height:56px}
-.nav .brand{font-family:Verdana,Arial,sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-right:auto}
-.nav a{font-family:Verdana,Arial,sans-serif;font-size:.78rem;color:var(--muted);text-decoration:none}
-.nav a:hover{color:var(--accent2)}
-@media(max-width:640px){.nav a:not(:first-of-type){display:none}}
-.hero{padding:64px 0 40px;border-bottom:1px solid var(--line);background:
-  radial-gradient(600px 240px at 20% 0%,rgba(255,107,53,.10),transparent 70%),
-  radial-gradient(500px 220px at 85% 10%,rgba(255,179,71,.06),transparent 70%)}
-.kicker{font-family:Verdana,Arial,sans-serif;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent2)}
-h1{font-size:clamp(1.8rem,5vw,2.7rem);line-height:1.18;margin:12px 0 16px}
-.sub{color:var(--muted);max-width:660px}
-.badge{display:inline-block;font-family:Verdana,Arial,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-top:20px;background:rgba(250,204,21,.10);color:var(--warn);border:1px solid rgba(250,204,21,.4)}
-section{padding:38px 0;border-bottom:1px solid var(--line)}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--amber));z-index:50;transition:width .1s linear}
+header{position:sticky;top:0;z-index:20;background:rgba(11,13,16,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:16px;height:60px}
+.brand{font-family:Verdana,Arial,sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-right:auto;white-space:nowrap}
+.nav a{font-family:Verdana,Arial,sans-serif;font-size:.76rem;color:var(--muted);text-decoration:none;transition:color .15s}
+.nav a:hover{color:var(--amber)}
+@media(max-width:680px){.nav a:not(:first-of-type){display:none}}
+.hero{position:relative;padding:72px 0 46px;border-bottom:1px solid var(--line);background:radial-gradient(700px 300px at 15% -10%,rgba(255,107,53,.13),transparent 70%),radial-gradient(520px 260px at 90% 0%,rgba(255,179,71,.07),transparent 70%)}
+.kicker{font-family:Verdana,Arial,sans-serif;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:8px}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--warn);box-shadow:0 0 0 0 rgba(250,204,21,.5);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(250,204,21,.45)}70%{box-shadow:0 0 0 10px rgba(250,204,21,0)}100%{box-shadow:0 0 0 0 rgba(250,204,21,0)}}
+h1{font-size:clamp(2rem,6vw,3.1rem);line-height:1.12;margin:14px 0 16px}
+.sub{color:var(--muted);max-width:680px;font-size:1.02rem}
+.badge{display:inline-block;font-family:Verdana,Arial,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-top:22px;background:rgba(250,204,21,.10);color:var(--warn);border:1px solid rgba(250,204,21,.4)}
+.statline{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 20px;min-width:130px}
+.stat .n{font-size:1.7rem;font-family:Georgia,serif;color:var(--amber);line-height:1.1}
+.stat .l{font-family:Verdana,Arial,sans-serif;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+section{padding:44px 0;border-bottom:1px solid var(--line)}
 section:last-of-type{border-bottom:none}
-h2{font-size:1.3rem;margin-bottom:18px;font-family:Verdana,Arial,sans-serif}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
-.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
-.fact{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.fact .k{font-family:Verdana,Arial,sans-serif;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.fact .v{font-size:1rem}
+.eyebrow{font-family:Verdana,Arial,sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+h2{font-size:1.55rem;margin-bottom:6px}
+.lede{color:var(--muted);font-size:.95rem;margin-bottom:22px;max-width:720px}
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.fact{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:border-color .2s}
+.fact:hover{border-color:rgba(255,107,53,.45)}
+.fact .k{font-family:Verdana,Arial,sans-serif;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.fact .v{font-size:.98rem}
 .timeline{list-style:none}
-.timeline li{position:relative;padding:0 0 24px 28px;border-left:2px solid var(--line);margin-left:8px}
+.timeline li{position:relative;padding:0 0 26px 30px;border-left:2px solid var(--line);margin-left:8px}
 .timeline li:last-child{padding-bottom:2px}
-.timeline li::before{content:"";position:absolute;left:-8px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 3px rgba(255,107,53,.16)}
-.t-when{font-family:Verdana,Arial,sans-serif;font-size:.75rem;color:var(--accent2);letter-spacing:.05em}
-.timeline p{margin-top:3px}
-.update{border-left:3px solid var(--accent);background:var(--panel2);padding:14px 18px;border-radius:0 10px 10px 0;margin-bottom:14px}
+.timeline li::before{content:'';position:absolute;left:-8px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(255,107,53,.14)}
+.t-when{font-family:Verdana,Arial,sans-serif;font-size:.74rem;color:var(--amber);letter-spacing:.05em}
+.timeline p{margin-top:4px}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.quote{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:22px}
+.quote blockquote{font-family:Georgia,serif;font-size:1.05rem;font-style:italic;line-height:1.55}
+.quote .who{margin-top:12px;font-family:Verdana,Arial,sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+.quote .src{font-size:.74rem;color:var(--muted);margin-top:3px}
+.update{border-left:3px solid var(--accent);background:var(--panel2);padding:16px 20px;border-radius:0 12px 12px 0;margin-bottom:14px}
 .update:last-child{margin-bottom:0}
-.u-when{font-family:Verdana,Arial,sans-serif;font-size:.74rem;color:var(--accent2);letter-spacing:.05em;margin-bottom:4px}
-.acc{border:1px solid var(--line);border-radius:10px;background:var(--panel);margin-bottom:10px;overflow:hidden}
-.acc button{all:unset;display:block;width:100%;padding:15px 20px;cursor:pointer;font-family:Verdana,Arial,sans-serif;font-size:.9rem;color:var(--text)}
-.acc button::after{content:"+";float:right;color:var(--accent);font-weight:700}
-.acc button.open::after{content:"\2013"}
+.u-when{font-family:Verdana,Arial,sans-serif;font-size:.73rem;color:var(--amber);letter-spacing:.05em;margin-bottom:5px}
+.acc{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px;overflow:hidden}
+.acc button{all:unset;display:block;width:100%;padding:16px 20px;cursor:pointer;font-family:Verdana,Arial,sans-serif;font-size:.9rem;color:var(--text)}
+.acc button::after{content:'+';float:right;color:var(--accent);font-weight:700}
+.acc button.open::after{content:'–'}
 .acc .panel{display:none;padding:0 20px 18px;color:var(--muted);font-size:.95rem}
 .acc .panel.show{display:block}
-.note{border-left:3px solid var(--warn);background:rgba(250,204,21,.06);padding:14px 18px;border-radius:0 10px 10px 0;font-size:.95rem}
+.help{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.help .card{padding:20px}
+.help h3{font-size:1.02rem;margin-bottom:6px}
+.help p{color:var(--muted);font-size:.92rem}
+.note{border-left:3px solid var(--warn);background:rgba(250,204,21,.06);padding:16px 20px;border-radius:0 12px 12px 0;font-size:.95rem}
+.fine{color:var(--muted);font-size:.85rem;margin-top:12px}
 .srcs{font-family:Verdana,Arial,sans-serif;font-size:.85rem;list-style:none}
-.srcs li{margin-bottom:10px;padding-left:18px;position:relative}
-.srcs li::before{content:"›";position:absolute;left:0;color:var(--accent);font-weight:700}
-.srcs a{color:var(--accent2);text-decoration:none;border-bottom:1px dotted var(--accent2)}
+.srcs li{margin-bottom:11px;padding-left:20px;position:relative}
+.srcs li::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:700}
+.srcs a{color:var(--amber);text-decoration:none;border-bottom:1px dotted var(--amber)}
 .srcs a:hover{color:var(--accent)}
-footer{padding:28px 0 44px;color:var(--muted);font-family:Verdana,Arial,sans-serif;font-size:.78rem}
-.statline{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:12px}
-.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 16px}
-.stat .n{font-size:1.2rem;color:var(--accent2);font-family:Georgia,serif}
-.stat .l{font-family:Verdana,Arial,sans-serif;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+footer{padding:34px 0 48px;color:var(--muted);font-family:Verdana,Arial,sans-serif;font-size:.78rem}
 </style>
 </head>
 <body>
+<div id='progress'></div>
 <header>
-  <div class="wrap nav">
-    <span class="brand">Case file</span>
-    <a href="#facts">Summary</a>
-    <a href="#timeline">Timeline</a>
-    <a href="#updates">Updates</a>
-    <a href="#faq">FAQ</a>
-    <a href="#investigation">Status</a>
-    <a href="#sources">Sources</a>
+  <div class='wrap nav'>
+    <span class='brand'>Case file</span>
+    <a href='#facts'>Summary</a>
+    <a href='#timeline'>Timeline</a>
+    <a href='#store'>The store</a>
+    <a href='#updates'>Updates</a>
+    <a href='#response'>Response</a>
+    <a href='#community'>Community</a>
+    <a href='#faq'>FAQ</a>
+    <a href='#sources'>Sources</a>
   </div>
 </header>
-
-<main class="wrap">
-  <div class="hero">
-    <p class="kicker">Fire investigation · Under review</p>
+<main class='wrap'>
+  <div class='hero'>
+    <p class='kicker'><span class='pulse'></span>Fire investigation · Under review</p>
     <h1>The Shurfine Food Mart fire<br>15 N. Main St., Spencer, NY</h1>
-    <p class="sub">On Friday, September 11, 2026, fire destroyed Spencer's only full-service grocery store. The building was a total loss. The origin and cause remain under investigation by the Tioga County Fire Investigation Team. This page tracks the public record as it develops.</p>
-    <span class="badge">Cause undetermined — investigation active</span>
+    <p class='sub'>On Friday, September 11, 2026, fire destroyed Spencer's only full-service grocery store. The building was a total loss, demolished the same day. The origin and cause remain under investigation by the Tioga County Fire Investigation Team. This page tracks the public record as it develops.</p>
+    <span class='badge'>Cause undetermined — investigation active</span>
+    <div class='statline'>
+      <div class='stat'><div class='n' id='days'>…</div><div class='l'>Days since fire</div></div>
+      <div class='stat'><div class='n'>11+</div><div class='l'>Departments responded</div></div>
+      <div class='stat'><div class='n'>0</div><div class='l'>Injuries reported</div></div>
+      <div class='stat'><div class='n'>20–30</div><div class='l'>Jobs at the store</div></div>
+    </div>
   </div>
-
-  <section id="facts">
+  <section id='facts'>
+    <p class='eyebrow'>01 · At a glance</p>
     <h2>Case summary</h2>
-    <div class="facts" id="factsGrid"></div>
+    <p class='lede'>The core facts of the fire and the investigation, drawn from published reports.</p>
+    <div class='facts' id='factsGrid'></div>
   </section>
-
-  <section id="timeline">
+  <section id='timeline'>
+    <p class='eyebrow'>02 · How it happened</p>
     <h2>Timeline</h2>
-    <ul class="timeline" id="timelineList"></ul>
+    <p class='lede'>From the first 911 report to the rubble that still stands today.</p>
+    <ul class='timeline' id='timelineList'></ul>
   </section>
-
-  <section id="updates">
+  <section id='store'>
+    <p class='eyebrow'>03 · What was lost</p>
+    <h2>The store and its people</h2>
+    <p class='lede'>Shurfine carried decades of Spencer history. Most locals knew it by an earlier name: the Big M.</p>
+    <div class='card' style='margin-bottom:16px'><p>The store was a local institution, remembered as the original Possingers store, which carried the village's two-digit phone number, 38, and later operated for years as the Big M under the Shurfine name. It employed roughly 20 to 30 people and was the only full-service grocery store in the Spencer–Van Etten area.</p></div>
+    <div class='quotes'>
+      <div class='quote'><blockquote>I spotted black smoke coming from the loading dock, called 911, and got everyone out.</blockquote><div class='who'>Zach Kevan</div><div class='src'>Store employee, as told to The Ithaca Voice</div></div>
+      <div class='quote'><blockquote>All the timbers are years old and seasoned … it got up into the ceiling and it was gone.</blockquote><div class='who'>Mike McCray</div><div class='src'>Store employee, on why it burned so fast, to The Ithaca Voice</div></div>
+    </div>
+  </section>
+  <section id='updates'>
+    <p class='eyebrow'>04 · Latest</p>
     <h2>Updates</h2>
-    <div id="updatesList"></div>
+    <p class='lede'>Status notes as the record develops, newest first.</p>
+    <div id='updatesList'></div>
   </section>
-
-  <section id="faq">
-    <h2>Questions</h2>
-    <div id="faqList"></div>
-  </section>
-
-  <section id="response">
+  <section id='response'>
+    <p class='eyebrow'>05 · The response</p>
     <h2>Emergency response</h2>
-    <div class="note">Staff evacuated safely before the building was fully engulfed, and the parking lot was cleared so apparatus could operate. No injuries were reported.</div>
-    <div style="margin-top:14px">
-      <div class="acc">
-        <button type="button" onclick="toggleAcc(this)">Mutual aid fire departments (11+)</button>
-        <div class="panel"><p>Candor, Halsey Valley, Lockwood, Tioga Center, Waverly-Barton, Campville, Weltonville, Community Fire &amp; Rescue, West Danby, Danby and Newfield fire departments.</p></div>
-      </div>
-      <div class="acc">
-        <button type="button" onclick="toggleAcc(this)">Other agencies on scene</button>
-        <div class="panel"><p>Bangs Ambulance, New York State Electric and Gas (NYSEG), the New York State Department of Transportation, and Austin Excavating.</p></div>
-      </div>
+    <div class='note'>Staff evacuated safely before the building was fully engulfed, and the parking lot was cleared so apparatus could operate. No injuries were reported. Crews came from three counties: Tompkins, Tioga and Chemung. Spencer–Van Etten Middle School, just blocks away, was not affected.</div>
+    <div style='margin-top:14px'>
+      <div class='acc'><button type='button' onclick='toggleAcc(this)'>Mutual aid fire departments (11+)</button><div class='panel'><p>Candor, Halsey Valley, Lockwood, Tioga Center, Waverly-Barton, Campville, Weltonville, Community Fire &amp; Rescue, West Danby, Danby and Newfield fire departments.</p></div></div>
+      <div class='acc'><button type='button' onclick='toggleAcc(this)'>Other agencies on scene</button><div class='panel'><p>Bangs Ambulance, New York State Electric and Gas (NYSEG), the New York State Department of Transportation, and Austin Excavating.</p></div></div>
     </div>
   </section>
-
-  <section id="community">
+  <section id='community'>
+    <p class='eyebrow'>06 · After the fire</p>
     <h2>Community impact</h2>
-    <p class="card">The Shurfine Food Mart, remembered by many locals as the former Big M, was the village's only full-service grocery store and a local employer. With it gone, the Spencer–Van Etten area is without a grocery store within roughly a 15-mile radius; the nearest full grocery options are in Sayre, Owego, Watkins Glen or Ithaca. In a statement, the village board said it would do everything within its ability to support efforts to ensure a grocery store or similar essential business remains part of the village, and encouraged the community to remain resilient and united.</p>
+    <p class='lede'>Losing the village's only grocery left a gap that reaches every part of daily life.</p>
+    <div class='card' style='margin-bottom:8px'><p>With the Shurfine gone, the Spencer–Van Etten area is without a grocery store within roughly a 15-mile radius; the nearest full grocery options are in Sayre, Owego, Watkins Glen or Ithaca, about 25 minutes out. The Dollar General in the village is a 10-minute walk but does not fill the gap: staples like milk and eggs have been selling out frequently. Residents who can't order groceries online, including people in their 80s, are hit hardest. In a statement, the village board said it would do everything within its ability to support efforts to ensure a grocery store or similar essential business remains part of the village, and encouraged the community to remain resilient and united.</p></div>
+    <p class='eyebrow' style='margin-top:26px'>Where the community stepped in</p>
+    <div class='help'>
+      <div class='card'><h3>Mutual Aid Tompkins food pantry</h3><p>The pantry's cabinet at 160 N. Main St. was lost with the store. A new food-sharing location opened at the Inspire SV-E Community &amp; Fitness Center, 57 E. Tioga St., closer to where the Shurfine once stood.</p></div>
+      <div class='card'><h3>Catholic Charities of Tompkins/Tioga</h3><p>Emergency assistance for families affected by the fire, from the region's Catholic Charities office.</p></div>
+      <div class='card'><h3>Spencer–Van Etten Food Cupboard</h3><p>The community food cupboard serving households in the school district.</p></div>
+    </div>
   </section>
-
-  <section id="investigation">
+  <section id='investigation'>
+    <p class='eyebrow'>07 · The open question</p>
     <h2>Investigation status</h2>
-    <div class="card">
+    <div class='card'>
       <p><strong>Active — cause not determined.</strong> The Tioga County Fire Investigation Team is leading the origin-and-cause investigation. No cause or findings had been announced as of the Oct. 10, 2026 community follow-up.</p>
-      <p style="margin-top:10px;color:var(--muted);font-size:.9rem">This is an independent public-information page. It is not affiliated with any fire department, the Tioga County Fire Investigation Team, or the store's ownership. Official findings will be reported by county authorities and local news.</p>
+      <p class='fine'>This is an independent public-information page. It is not affiliated with any fire department, the Tioga County Fire Investigation Team, or the store's ownership. Official findings will be reported by county authorities and local news.</p>
     </div>
   </section>
-
-  <section id="sources">
+  <section id='faq'>
+    <p class='eyebrow'>08 · Questions</p>
+    <h2>Questions people are asking</h2>
+    <p class='lede'>Each answer states only what published reports actually support.</p>
+    <div id='faqList'></div>
+  </section>
+  <section id='sources'>
+    <p class='eyebrow'>09 · The record</p>
     <h2>Sources</h2>
-    <ul class="srcs" id="sourceList"></ul>
+    <p class='lede'>Every fact on this page traces to one of these published reports.</p>
+    <ul class='srcs' id='sourceList'></ul>
   </section>
-
   <footer>
-    <div class="statline">
-      <div class="stat"><div class="n" id="days">…</div><div class="l">Days since fire</div></div>
-      <div class="stat"><div class="n">11+</div><div class="l">Departments responded</div></div>
-      <div class="stat"><div class="n">0</div><div class="l">Injuries reported</div></div>
-    </div>
-    <p>Last reviewed: <span id="updated"></span>.</p>
-    <p style="margin-top:6px">Independent community case file · not an official source. Facts drawn from the published reports linked above.</p>
+    <p>Last reviewed: <span id='updated'></span>.</p>
+    <p style='margin-top:6px'>Independent community case file · not an official source. Facts drawn from the published reports linked above.</p>
   </footer>
 </main>
-
 <script>
-/* ===== DATA: edit these lists to update the site — no HTML changes needed ===== */
-
-const FACTS = [
-  {k:'Location', v:'15 N. Main St., Spencer, NY 14883'},
-  {k:'Date of fire', v:'Friday, September 11, 2026'},
-  {k:'Reported', v:'Shortly before 12:30 p.m.'},
-  {k:'First responders', v:'Spencer Fire Department'},
-  {k:'Damage', v:'Total loss of the building'},
-  {k:'Injuries', v:'None reported; staff evacuated safely'},
-  {k:'Lead investigator', v:'Tioga County Fire Investigation Team'},
-  {k:'Cause', v:'Undetermined'}
+const FACTS=[
+  {k:'Location',v:'15 N. Main St., Spencer, NY 14883'},
+  {k:'Date of fire',v:'Friday, September 11, 2026'},
+  {k:'Reported',v:'Shortly before 12:30 p.m.'},
+  {k:'First responders',v:'Spencer Fire Department'},
+  {k:'Damage',v:'Total loss of the building'},
+  {k:'Injuries',v:'None reported; staff evacuated safely'},
+  {k:'Lead investigator',v:'Tioga County Fire Investigation Team'},
+  {k:'Cause',v:'Undetermined'}
 ];
-
-const TIMELINE = [
-  {when:'Fri, Sept 11, 2026 · shortly before 12:30 p.m.', text:'Units from the Spencer Fire Department respond to a reported structure fire at 15 N. Main St. in the village. Flames are soon visible through the roof.'},
-  {when:'Fri, Sept 11, 2026 · afternoon', text:'Store employees evacuate the building safely and move vehicles out of the parking lot to give first responders room to operate. Crews from eleven area departments fight the blaze. The remains of the building are demolished the same day.'},
-  {when:'Sat, Sept 12, 2026 · morning', text:'Spencer firefighters return to the scene and spend several hours extinguishing remaining hotspots.'},
-  {when:'Mon, Sept 14, 2026', text:'The site is a pile of rubble. The building is declared a total loss. The origin and cause are under investigation by the Tioga County fire investigation team.'},
-  {when:'Ongoing', text:'No cause has been announced. This page will be updated as findings are made public.'}
+const TIMELINE=[
+  {when:'Fri, Sept 11, 2026 · shortly before 12:30 p.m.',text:'Units from the Spencer Fire Department respond to a reported structure fire at 15 N. Main St. in the village. Flames are soon visible through the roof.'},
+  {when:'Fri, Sept 11, 2026 · afternoon',text:'Store employees evacuate the building safely and move vehicles out of the parking lot to give first responders room to operate. Crews from eleven area departments fight the blaze. The remains of the building are demolished the same day.'},
+  {when:'Sat, Sept 12, 2026 · morning',text:'Spencer firefighters return to the scene and spend several hours extinguishing remaining hotspots.'},
+  {when:'Mon, Sept 14, 2026',text:'The site is a pile of rubble. The building is declared a total loss. The origin and cause are under investigation by the Tioga County fire investigation team.'},
+  {when:'Fri, Oct 10, 2026 · one month on',text:'The rubble still stands on the Main Street lot, with a lingering odor in the air and shopping carts scattered through the wreckage. No cause has been announced.'},
+  {when:'Ongoing',text:'The Tioga County Fire Investigation Team’s work continues. This page will be updated as findings are made public.'}
 ];
-
-const UPDATES = [
-  {when:'Sat, Oct 10, 2026 — one month on', text:'No cause has been announced. The Ithaca Voice reports the rubble still stands on the Main Street lot, with a lingering odor in the air and shopping carts scattered through the wreckage; the remains were demolished on Sept. 11, the day of the fire. The Dollar General in the village remains open, but residents say its limited selection is no substitute for a full grocery: staples like milk and eggs have been selling out frequently, and a local food assistance program that relied on Shurfine for some items has been disrupted.'}
+const UPDATES=[
+  {when:'Sat, Oct 10, 2026 — one month on',text:'No cause has been announced. The Ithaca Voice reports the rubble still stands on the Main Street lot, with a lingering odor in the air and shopping carts scattered through the wreckage. The Dollar General remains open but its limited selection is no substitute for a full grocery: staples like milk and eggs have been selling out frequently. A local food pantry cabinet that stood at 160 N. Main St. was lost with the store, and Mutual Aid Tompkins has since opened a food-sharing location at the Inspire SV-E Community & Fitness Center, 57 E. Tioga St., closer to where the Shurfine once stood.'}
 ];
-
-/* Questions the public is asking. The answer must reflect what published reports actually say. */
-const FAQ = [
-  {q:'Did the fire alarm system go off?', a:'No public answer exists yet. None of the published reports on the fire say whether the store\u2019s fire alarm system, or any sprinkler system, activated before or during the blaze. Whether the alarm sounded is one of the details an origin-and-cause review would cover, and it is part of what the Tioga County Fire Investigation Team\u2019s investigation would establish. Until the team or the store\u2019s ownership speaks to it publicly, this page will not state either answer.'},
-  {q:'Has a cause been announced?', a:'No. The cause remains under investigation by the Tioga County Fire Investigation Team, and no findings had been announced as of the Oct. 10, 2026 follow-up coverage.'},
-  {q:'Was anyone hurt?', a:'No injuries were reported. Store employees evacuated the building safely and moved vehicles out of the parking lot so first responders had room to operate.'},
-  {q:'When will findings be released?', a:'No timeline has been published. This page will be updated if and when official findings are made public.'}
+const FAQ=[
+  {q:'Did the fire alarm system go off?',a:'No public answer exists yet. None of the published reports on the fire say whether the store’s fire alarm system, or any sprinkler system, activated before or during the blaze. Whether the alarm sounded is one of the details an origin-and-cause review would cover, and it is part of what the Tioga County Fire Investigation Team’s investigation would establish. Until the team or the store’s ownership speaks to it publicly, this page will not state either answer.'},
+  {q:'Has a cause been announced?',a:'No. The cause remains under investigation by the Tioga County Fire Investigation Team, and no findings had been announced as of the Oct. 10, 2026 follow-up coverage.'},
+  {q:'Was anyone hurt?',a:'No injuries were reported. Store employees evacuated the building safely and moved vehicles out of the parking lot so first responders had room to operate.'},
+  {q:'Where can people shop or get food now?',a:'The nearest full grocery stores are about 25 minutes away in Sayre, Owego, Watkins Glen or Ithaca. The village Dollar General is open but does not carry a full grocery range. Free food help is available from Mutual Aid Tompkins at the Inspire SV-E Community & Fitness Center (57 E. Tioga St.), Catholic Charities of Tompkins/Tioga, and the Spencer–Van Etten Food Cupboard.'},
+  {q:'How can I help?',a:'Local reporting points to the organizations listed under Community impact: Mutual Aid Tompkins, Catholic Charities of Tompkins/Tioga, and the Spencer–Van Etten Food Cupboard.'},
+  {q:'When will findings be released?',a:'No timeline has been published. This page will be updated if and when official findings are made public.'}
 ];
-
-const SOURCES = [
-  {name:'Elmira Star-Gazette — "Fire destroys Spencer Shurfine Food Mart, cause under investigation" (Sept 14, 2026)', url:'https://www.stargazette.com/story/news/local/2026/09/14/tioga-county-shurfine-grocery-store-in-spencer-destroyed-by-fire/91757343007/'},
-  {name:'WETM via Yahoo News — "Village of Spencer loses its only grocery store to fire" (Sept 14, 2026)', url:'https://www.yahoo.com/news/articles/village-spencer-loses-only-grocery-223930675.html'},
-  {name:'WBNG — "Town of Spencer recovering after losing only grocery store in fire" (Sept 14, 2026)', url:'https://www.wbng.com/2026/09/14/town-spencer-recovering-after-losing-only-grocery-store-fire/'},
-  {name:'The Ithaca Voice — "Fire destroys only grocery store in Spencer, sending shockwaves" (Sept 12, 2026)', url:'https://ithacavoice.org/2026/09/fire-destroys-only-grocery-store-in-spencer-sending-shockwaves/'},
-  {name:'The Ithaca Voice — "\u2018It truly felt like a death\u2019: After Shurfine fire, Spencer community works to fill gaps left behind" (Oct 10, 2026)', url:'https://ithacavoice.org/2026/10/it-truly-felt-like-a-death-after-shurfine-fire-spencer-community-works-to-fill-gaps-left-behind/'}
+const SOURCES=[
+  {name:'Elmira Star-Gazette — “Fire destroys Spencer Shurfine Food Mart, cause under investigation” (Sept 14, 2026)',url:'https://www.stargazette.com/story/news/local/2026/09/14/tioga-county-shurfine-grocery-store-in-spencer-destroyed-by-fire/91757343007/'},
+  {name:'WETM via Yahoo News — “Village of Spencer loses its only grocery store to fire” (Sept 14, 2026)',url:'https://www.yahoo.com/news/articles/village-spencer-loses-only-grocery-223930675.html'},
+  {name:'WBNG — “Town of Spencer recovering after losing only grocery store in fire” (Sept 14, 2026)',url:'https://www.wbng.com/2026/09/14/town-spencer-recovering-after-losing-only-grocery-store-fire/'},
+  {name:'The Ithaca Voice — “Fire destroys only grocery store in Spencer, sending shockwaves” (Sept 12, 2026)',url:'https://ithacavoice.org/2026/09/fire-destroys-only-grocery-store-in-spencer-sending-shockwaves/'},
+  {name:'The Ithaca Voice — “‘It truly felt like a death’: After Shurfine fire, Spencer community works to fill gaps left behind” (Oct 10, 2026)',url:'https://ithacavoice.org/2026/10/it-truly-felt-like-a-death-after-shurfine-fire-spencer-community-works-to-fill-gaps-left-behind/'}
 ];
-
-/* ===== RENDER ===== */
-document.getElementById('factsGrid').innerHTML = FACTS.map(f =>
-  `<div class="fact"><div class="k">${f.k}</div><div class="v">${f.v}</div></div>`).join('');
-
-document.getElementById('timelineList').innerHTML = TIMELINE.map(t =>
-  `<li><span class="t-when">${t.when}</span><p>${t.text}</p></li>`).join('');
-
-document.getElementById('updatesList').innerHTML = UPDATES.map(u =>
-  `<div class="update"><div class="u-when">${u.when}</div><p>${u.text}</p></div>`).join('');
-
-document.getElementById('faqList').innerHTML = FAQ.map(f =>
-  `<div class="acc"><button type="button" onclick="toggleAcc(this)">${f.q}</button><div class="panel"><p>${f.a}</p></div></div>`).join('');
-
-document.getElementById('sourceList').innerHTML = SOURCES.map(s =>
-  `<li><a href="${s.url}" target="_blank" rel="noopener">${s.name}</a></li>`).join('');
-
-/* Days-since counter */
+document.getElementById('factsGrid').innerHTML=FACTS.map(f=>`<div class='fact'><div class='k'>${f.k}</div><div class='v'>${f.v}</div></div>`).join('');
+document.getElementById('timelineList').innerHTML=TIMELINE.map(t=>`<li><span class='t-when'>${t.when}</span><p>${t.text}</p></li>`).join('');
+document.getElementById('updatesList').innerHTML=UPDATES.map(u=>`<div class='update'><div class='u-when'>${u.when}</div><p>${u.text}</p></div>`).join('');
+document.getElementById('faqList').innerHTML=FAQ.map(f=>`<div class='acc'><button type='button' onclick='toggleAcc(this)'>${f.q}</button><div class='panel'><p>${f.a}</p></div></div>`).join('');
+document.getElementById('sourceList').innerHTML=SOURCES.map(s=>`<li><a href='${s.url}' target='_blank' rel='noopener'>${s.name}</a></li>`).join('');
 (function(){
-  const fire = new Date(2026, 8, 11); // Sept 11, 2026 (month is 0-based)
-  const days = Math.floor((Date.now() - fire.getTime()) / 86400000);
-  document.getElementById('days').textContent = days;
-  document.getElementById('updated').textContent =
-    new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
+  const fire=new Date(2026,8,11);
+  const days=Math.floor((Date.now()-fire.getTime())/86400000);
+  document.getElementById('days').textContent=days;
+  document.getElementById('updated').textContent=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
 })();
-
-/* Accordions */
-function toggleAcc(btn){
-  const open = btn.nextElementSibling.classList.toggle('show');
-  btn.classList.toggle('open', open);
-}
+function toggleAcc(btn){const open=btn.nextElementSibling.classList.toggle('show');btn.classList.toggle('open',open);}
+addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight);document.getElementById('progress').style.width=(p*100)+'%';},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.08});
+document.querySelectorAll('section > *:not(.eyebrow), .stat').forEach(el=>{el.classList.add('reveal');io.observe(el);});
 </script>
 </body>
 </html>
