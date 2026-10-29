@@ -7,98 +7,98 @@
 <meta name='description' content='An open case-file website tracking the investigation into the fire that destroyed the Shurfine Food Mart at 15 N. Main St., Spencer, New York, on September 11, 2026.'>
 <link rel='icon' href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%27.9em%27 font-size=%2790%27>🔥</text></svg>'>
 <style>
-:root{--bg:#0b0d10;--panel:#141821;--panel2:#1a1f2a;--line:#262d3a;--text:#f0ede8;--muted:#9aa3b0;--accent:#ff6b35;--amber:#ffb347;--warn:#facc15}
+:root{--paper:#f6f1e7;--paper2:#efe8da;--ink:#1d1b16;--ink2:#5c574c;--red:#c2361f;--red2:#8e2413;--gold:#a67c2e;--line:#d9cfbc}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
-.wrap{max-width:920px;margin:0 auto;padding:0 22px}
-h1,h2,h3{font-family:Georgia,'Times New Roman',serif}
-#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--amber));z-index:50;transition:width .1s linear}
-header{position:sticky;top:0;z-index:20;background:rgba(11,13,16,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;gap:16px;height:60px}
-.brand{font-family:Verdana,Arial,sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-right:auto;white-space:nowrap}
-.nav a{font-family:Verdana,Arial,sans-serif;font-size:.76rem;color:var(--muted);text-decoration:none;transition:color .15s}
-.nav a:hover{color:var(--amber)}
-@media(max-width:680px){.nav a:not(:first-of-type){display:none}}
-.hero{position:relative;padding:72px 0 46px;border-bottom:1px solid var(--line);background:radial-gradient(700px 300px at 15% -10%,rgba(255,107,53,.13),transparent 70%),radial-gradient(520px 260px at 90% 0%,rgba(255,179,71,.07),transparent 70%)}
-.kicker{font-family:Verdana,Arial,sans-serif;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);display:flex;align-items:center;gap:8px}
-.pulse{width:8px;height:8px;border-radius:50%;background:var(--warn);box-shadow:0 0 0 0 rgba(250,204,21,.5);animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(250,204,21,.45)}70%{box-shadow:0 0 0 10px rgba(250,204,21,0)}100%{box-shadow:0 0 0 0 rgba(250,204,21,0)}}
-h1{font-size:clamp(2rem,6vw,3.1rem);line-height:1.12;margin:14px 0 16px}
-.sub{color:var(--muted);max-width:680px;font-size:1.02rem}
-.badge{display:inline-block;font-family:Verdana,Arial,sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px;border-radius:999px;margin-top:22px;background:rgba(250,204,21,.10);color:var(--warn);border:1px solid rgba(250,204,21,.4)}
-.statline{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
-.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 20px;min-width:130px}
-.stat .n{font-size:1.7rem;font-family:Georgia,serif;color:var(--amber);line-height:1.1}
-.stat .l{font-family:Verdana,Arial,sans-serif;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:4px}
-section{padding:44px 0;border-bottom:1px solid var(--line)}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
+.wrap{max-width:940px;margin:0 auto;padding:0 22px}
+h1,h2,h3,blockquote{font-family:Georgia,'Times New Roman',serif}
+header{position:sticky;top:0;z-index:20;background:rgba(246,241,231,.92);backdrop-filter:blur(8px);border-bottom:3px double var(--line)}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-family:Verdana,Arial,sans-serif;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);border-bottom:1px solid var(--line)}
+.topbar b{color:var(--red)}
+.nav{display:flex;align-items:center;gap:16px;height:54px}
+.nav a{font-family:Verdana,Arial,sans-serif;font-size:.74rem;color:var(--ink2);text-decoration:none;letter-spacing:.04em}
+.nav a:hover{color:var(--red)}
+@media(max-width:700px){.nav a:not(:first-of-type){display:none}}
+.hero{padding:64px 0 44px;border-bottom:3px double var(--line);background:linear-gradient(180deg,rgba(198,54,31,.05),transparent 60%)}
+.case-tag{font-family:Verdana,Arial,sans-serif;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+h1{font-size:clamp(2.1rem,6vw,3.3rem);line-height:1.1;margin:0 0 18px;font-weight:700}
+.lede{color:var(--ink2);max-width:660px;font-size:1.04rem}
+.stamp{display:inline-block;transform:rotate(-2deg);font-family:Verdana,Arial,sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red2);border:3px solid var(--red);padding:10px 18px;margin-top:26px;border-radius:4px;background:rgba(198,54,31,.05)}
+.statline{display:flex;gap:0;flex-wrap:wrap;margin-top:34px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.stat{flex:1 1 150px;padding:16px 20px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat .n{font-size:1.8rem;font-family:Georgia,serif;color:var(--red);line-height:1.1}
+.stat .l{font-family:Verdana,Arial,sans-serif;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-top:4px}
+section{padding:46px 0;border-bottom:1px solid var(--line)}
 section:last-of-type{border-bottom:none}
-.eyebrow{font-family:Verdana,Arial,sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
-h2{font-size:1.55rem;margin-bottom:6px}
-.lede{color:var(--muted);font-size:.95rem;margin-bottom:22px;max-width:720px}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
-.reveal.in{opacity:1;transform:none}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+.eyebrow{font-family:Verdana,Arial,sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:8px}
+h2{font-size:1.7rem;margin-bottom:6px}
+.sub{color:var(--ink2);font-size:.96rem;margin-bottom:24px;max-width:700px}
+.card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px;box-shadow:0 1px 3px rgba(29,27,22,.05)}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
-.fact{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:border-color .2s}
-.fact:hover{border-color:rgba(255,107,53,.45)}
-.fact .k{font-family:Verdana,Arial,sans-serif;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.fact{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.fact .k{font-family:Verdana,Arial,sans-serif;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:5px}
 .fact .v{font-size:.98rem}
 .timeline{list-style:none}
-.timeline li{position:relative;padding:0 0 26px 30px;border-left:2px solid var(--line);margin-left:8px}
+.timeline li{position:relative;padding:0 0 28px 32px;border-left:2px solid var(--line);margin-left:8px}
 .timeline li:last-child{padding-bottom:2px}
-.timeline li::before{content:'';position:absolute;left:-8px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(255,107,53,.14)}
-.t-when{font-family:Verdana,Arial,sans-serif;font-size:.74rem;color:var(--amber);letter-spacing:.05em}
+.timeline li::before{content:'';position:absolute;left:-9px;top:4px;width:16px;height:16px;border-radius:50%;background:var(--red);border:3px solid var(--paper)}
+.t-when{font-family:Verdana,Arial,sans-serif;font-size:.72rem;color:var(--gold);letter-spacing:.05em}
 .timeline p{margin-top:4px}
 .quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.quote{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:22px}
-.quote blockquote{font-family:Georgia,serif;font-size:1.05rem;font-style:italic;line-height:1.55}
-.quote .who{margin-top:12px;font-family:Verdana,Arial,sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
-.quote .src{font-size:.74rem;color:var(--muted);margin-top:3px}
-.update{border-left:3px solid var(--accent);background:var(--panel2);padding:16px 20px;border-radius:0 12px 12px 0;margin-bottom:14px}
+.quote{background:#fff;border:1px solid var(--line);border-left:5px solid var(--red);border-radius:10px;padding:24px}
+.quote blockquote{font-size:1.08rem;font-style:italic;line-height:1.55}
+.quote .who{margin-top:14px;font-family:Verdana,Arial,sans-serif;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.quote .src{font-size:.74rem;color:var(--ink2);margin-top:3px}
+.update{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px;margin-bottom:14px;position:relative}
+.update::before{content:'UPDATE';position:absolute;top:-9px;left:18px;font-family:Verdana,Arial,sans-serif;font-size:.6rem;letter-spacing:.16em;color:#fff;background:var(--gold);padding:2px 10px;border-radius:3px}
 .update:last-child{margin-bottom:0}
-.u-when{font-family:Verdana,Arial,sans-serif;font-size:.73rem;color:var(--amber);letter-spacing:.05em;margin-bottom:5px}
-.acc{border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px;overflow:hidden}
-.acc button{all:unset;display:block;width:100%;padding:16px 20px;cursor:pointer;font-family:Verdana,Arial,sans-serif;font-size:.9rem;color:var(--text)}
-.acc button::after{content:'+';float:right;color:var(--accent);font-weight:700}
-.acc button.open::after{content:'–'}
-.acc .panel{display:none;padding:0 20px 18px;color:var(--muted);font-size:.95rem}
+.u-when{font-family:Verdana,Arial,sans-serif;font-size:.73rem;color:var(--gold);letter-spacing:.05em;margin:6px 0 5px}
+.acc{border:1px solid var(--line);border-radius:10px;background:#fff;margin-bottom:10px;overflow:hidden}
+.acc button{all:unset;display:block;width:100%;padding:16px 20px;cursor:pointer;font-family:Verdana,Arial,sans-serif;font-size:.9rem;color:var(--ink)}
+.acc button::after{content:'+';float:right;color:var(--red);font-weight:700}
+.acc button.open::after{content:'\2013'}
+.acc .panel{display:none;padding:0 20px 18px;color:var(--ink2);font-size:.95rem}
 .acc .panel.show{display:block}
 .help{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
 .help .card{padding:20px}
-.help h3{font-size:1.02rem;margin-bottom:6px}
-.help p{color:var(--muted);font-size:.92rem}
-.note{border-left:3px solid var(--warn);background:rgba(250,204,21,.06);padding:16px 20px;border-radius:0 12px 12px 0;font-size:.95rem}
-.fine{color:var(--muted);font-size:.85rem;margin-top:12px}
+.help h3{font-size:1.05rem;margin-bottom:6px}
+.help p{color:var(--ink2);font-size:.92rem}
+.note{border-left:5px solid var(--gold);background:#fff;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 20px;border-radius:10px;font-size:.95rem}
+.fine{color:var(--ink2);font-size:.85rem;margin-top:12px;font-style:italic}
 .srcs{font-family:Verdana,Arial,sans-serif;font-size:.85rem;list-style:none}
-.srcs li{margin-bottom:11px;padding-left:20px;position:relative}
-.srcs li::before{content:'›';position:absolute;left:0;color:var(--accent);font-weight:700}
-.srcs a{color:var(--amber);text-decoration:none;border-bottom:1px dotted var(--amber)}
-.srcs a:hover{color:var(--accent)}
-footer{padding:34px 0 48px;color:var(--muted);font-family:Verdana,Arial,sans-serif;font-size:.78rem}
+.srcs li{margin-bottom:12px;padding-left:22px;position:relative;color:var(--ink2)}
+.srcs li::before{content:'§';position:absolute;left:0;color:var(--red);font-weight:700}
+.srcs a{color:var(--red2);text-decoration:none;border-bottom:1px dotted var(--red2)}
+.srcs a:hover{color:var(--red)}
+footer{padding:36px 0 48px;color:var(--ink2);font-family:Verdana,Arial,sans-serif;font-size:.76rem;text-align:center}
+footer .rule{width:60px;height:3px;background:var(--red);margin:0 auto 18px}
+@media print{header{position:static}.reveal{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
-<div id='progress'></div>
 <header>
-  <div class='wrap nav'>
-    <span class='brand'>Case file</span>
-    <a href='#facts'>Summary</a>
-    <a href='#timeline'>Timeline</a>
-    <a href='#store'>The store</a>
-    <a href='#updates'>Updates</a>
-    <a href='#response'>Response</a>
-    <a href='#community'>Community</a>
-    <a href='#faq'>FAQ</a>
-    <a href='#sources'>Sources</a>
+  <div class='wrap'>
+    <div class='topbar'><span>Case file · <b>Open</b></span><span>Tioga County, New York</span></div>
+    <div class='nav'>
+      <a href='#facts'>Summary</a>
+      <a href='#timeline'>Timeline</a>
+      <a href='#store'>The store</a>
+      <a href='#updates'>Updates</a>
+      <a href='#response'>Response</a>
+      <a href='#community'>Community</a>
+      <a href='#faq'>FAQ</a>
+      <a href='#sources'>Sources</a>
+    </div>
   </div>
 </header>
 <main class='wrap'>
   <div class='hero'>
-    <p class='kicker'><span class='pulse'></span>Fire investigation · Under review</p>
-    <h1>The Shurfine Food Mart fire<br>15 N. Main St., Spencer, NY</h1>
-    <p class='sub'>On Friday, September 11, 2026, fire destroyed Spencer's only full-service grocery store. The building was a total loss, demolished the same day. The origin and cause remain under investigation by the Tioga County Fire Investigation Team. This page tracks the public record as it develops.</p>
-    <span class='badge'>Cause undetermined — investigation active</span>
+    <p class='case-tag'>Fire investigation · Spencer, NY 14883</p>
+    <h1>The Shurfine Food Mart fire</h1>
+    <p class='lede'>On Friday, September 11, 2026, fire destroyed Spencer's only full-service grocery store at 15 N. Main St. The building was a total loss, demolished the same day. The origin and cause remain under investigation by the Tioga County Fire Investigation Team. This page tracks the public record as it develops.</p>
+    <span class='stamp'>Cause undetermined — investigation active</span>
     <div class='statline'>
       <div class='stat'><div class='n' id='days'>…</div><div class='l'>Days since fire</div></div>
       <div class='stat'><div class='n'>11+</div><div class='l'>Departments responded</div></div>
@@ -109,19 +109,19 @@ footer{padding:34px 0 48px;color:var(--muted);font-family:Verdana,Arial,sans-ser
   <section id='facts'>
     <p class='eyebrow'>01 · At a glance</p>
     <h2>Case summary</h2>
-    <p class='lede'>The core facts of the fire and the investigation, drawn from published reports.</p>
+    <p class='sub'>The core facts of the fire and the investigation, drawn from published reports.</p>
     <div class='facts' id='factsGrid'></div>
   </section>
   <section id='timeline'>
     <p class='eyebrow'>02 · How it happened</p>
     <h2>Timeline</h2>
-    <p class='lede'>From the first 911 report to the rubble that still stands today.</p>
+    <p class='sub'>From the first 911 report to the rubble that still stands today.</p>
     <ul class='timeline' id='timelineList'></ul>
   </section>
   <section id='store'>
     <p class='eyebrow'>03 · What was lost</p>
     <h2>The store and its people</h2>
-    <p class='lede'>Shurfine carried decades of Spencer history. Most locals knew it by an earlier name: the Big M.</p>
+    <p class='sub'>Shurfine carried decades of Spencer history. Most locals knew it by an earlier name: the Big M.</p>
     <div class='card' style='margin-bottom:16px'><p>The store was a local institution, remembered as the original Possingers store, which carried the village's two-digit phone number, 38, and later operated for years as the Big M under the Shurfine name. It employed roughly 20 to 30 people and was the only full-service grocery store in the Spencer–Van Etten area.</p></div>
     <div class='quotes'>
       <div class='quote'><blockquote>I spotted black smoke coming from the loading dock, called 911, and got everyone out.</blockquote><div class='who'>Zach Kevan</div><div class='src'>Store employee, as told to The Ithaca Voice</div></div>
@@ -131,7 +131,7 @@ footer{padding:34px 0 48px;color:var(--muted);font-family:Verdana,Arial,sans-ser
   <section id='updates'>
     <p class='eyebrow'>04 · Latest</p>
     <h2>Updates</h2>
-    <p class='lede'>Status notes as the record develops, newest first.</p>
+    <p class='sub'>Status notes as the record develops, newest first.</p>
     <div id='updatesList'></div>
   </section>
   <section id='response'>
@@ -146,7 +146,7 @@ footer{padding:34px 0 48px;color:var(--muted);font-family:Verdana,Arial,sans-ser
   <section id='community'>
     <p class='eyebrow'>06 · After the fire</p>
     <h2>Community impact</h2>
-    <p class='lede'>Losing the village's only grocery left a gap that reaches every part of daily life.</p>
+    <p class='sub'>Losing the village's only grocery left a gap that reaches every part of daily life.</p>
     <div class='card' style='margin-bottom:8px'><p>With the Shurfine gone, the Spencer–Van Etten area is without a grocery store within roughly a 15-mile radius; the nearest full grocery options are in Sayre, Owego, Watkins Glen or Ithaca, about 25 minutes out. The Dollar General in the village is a 10-minute walk but does not fill the gap: staples like milk and eggs have been selling out frequently. Residents who can't order groceries online, including people in their 80s, are hit hardest. In a statement, the village board said it would do everything within its ability to support efforts to ensure a grocery store or similar essential business remains part of the village, and encouraged the community to remain resilient and united.</p></div>
     <p class='eyebrow' style='margin-top:26px'>Where the community stepped in</p>
     <div class='help'>
@@ -166,20 +166,23 @@ footer{padding:34px 0 48px;color:var(--muted);font-family:Verdana,Arial,sans-ser
   <section id='faq'>
     <p class='eyebrow'>08 · Questions</p>
     <h2>Questions people are asking</h2>
-    <p class='lede'>Each answer states only what published reports actually support.</p>
+    <p class='sub'>Each answer states only what published reports actually support.</p>
     <div id='faqList'></div>
   </section>
   <section id='sources'>
     <p class='eyebrow'>09 · The record</p>
     <h2>Sources</h2>
-    <p class='lede'>Every fact on this page traces to one of these published reports.</p>
+    <p class='sub'>Every fact on this page traces to one of these published reports.</p>
     <ul class='srcs' id='sourceList'></ul>
   </section>
-  <footer>
+</main>
+<footer>
+  <div class='wrap'>
+    <div class='rule'></div>
     <p>Last reviewed: <span id='updated'></span>.</p>
     <p style='margin-top:6px'>Independent community case file · not an official source. Facts drawn from the published reports linked above.</p>
-  </footer>
-</main>
+  </div>
+</footer>
 <script>
 const FACTS=[
   {k:'Location',v:'15 N. Main St., Spencer, NY 14883'},
@@ -229,9 +232,6 @@ document.getElementById('sourceList').innerHTML=SOURCES.map(s=>`<li><a href='${s
   document.getElementById('updated').textContent=new Date().toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
 })();
 function toggleAcc(btn){const open=btn.nextElementSibling.classList.toggle('show');btn.classList.toggle('open',open);}
-addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight);document.getElementById('progress').style.width=(p*100)+'%';},{passive:true});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.08});
-document.querySelectorAll('section > *:not(.eyebrow), .stat').forEach(el=>{el.classList.add('reveal');io.observe(el);});
 </script>
 </body>
 </html>
